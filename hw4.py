@@ -1,33 +1,3 @@
-# Завдання номер 1
-def caching_fibonacci(n):
-    cache = {}
-    def fibonacci(n):
-        if n <= 0:
-            return 0
-        elif n == 1:
-            return 1
-        elif n in cache:
-            return cache[n]   
-        cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
-        return cache[n]     
-    return fibonacci(n)
-
-
-
-# Завдання номер 2
-import re
-
-def generator_numbers(text: str):
-    for match in re.findall(r'\s(-?\d+\.\d+)\s', f' {text} '):
-        yield float(match)
-
-def sum_profit(text: str) -> float:
-    return sum(generator_numbers(text))
-         
-
-
-
-# Завдання номер 3
 def input_error(func):
     def inner(*args, **kwargs):
         try:
